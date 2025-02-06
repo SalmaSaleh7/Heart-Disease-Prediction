@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('/static/ML.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px; /* Adjust padding as needed */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center; /* Center content horizontally */
+}
+
+h1 {
+    color: rgb(115, 188, 208);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+label {
+    margin-top: 10px;
+    color: #1b508a;
+    font-weight: bold; /* Make labels bold */
+}
+
+p{
+    margin-top: 10px;
+    color: #1b508a;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="text"], input[type="submit"] {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    border-radius: 20px; /* Make input fields circular */
+}
+
+select{
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    border-radius: 20px; /* Make input fields circular */
+}
+
+input[type="submit"] {
+    background-color: #828de2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #362689;
+}
+
+input.invalid {
+    border-color: rgb(231, 90, 90);
+}

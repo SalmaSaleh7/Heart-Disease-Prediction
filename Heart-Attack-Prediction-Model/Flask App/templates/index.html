@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post" onsubmit="return validateForm()">
+            <label>Age:</label><br>
+            <input type="number" name="age" required><br>
+            <label>Sex:</label><br>
+            <select name="sex" required>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select><br>
+            <label>Chest Pain Type (cp):</label><br>
+            <input type="number" name="cp" required><br>
+            <label>Resting Blood Pressure (trtbps):</label><br>
+            <input type="number" name="trtbps" required><br>
+            <label>Cholesterol (chol):</label><br>
+            <input type="number" name="chol" required><br>
+            <label>Fasting Blood Sugar (fbs):</label><br>
+            <input type="number" name="fbs" required><br>
+            <label>Resting ECG (restecg):</label><br>
+            <input type="number" name="restecg" required><br>
+            <label>Max Heart Rate (thalachh):</label><br>
+            <input type="number" name="thalachh" required><br>
+            <label>Exercise Induced Angina (exng):</label><br>
+            <input type="number" name="exng" required><br>
+            <label>Oldpeak:</label><br>
+            <input type="number" name="oldpeak" step="0.1" required><br>
+            <label>Slope (slp):</label><br>
+            <input type="number" name="slp" required><br>
+            <label>Number of Major Vessels (caa):</label><br>
+            <input type="number" name="caa" required><br>
+            <label>Thalassemia (thall):</label><br>
+            <input type="number" name="thall" required><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var form = document.forms[0];
+            if (!form.checkValidity()) {
+                // If form is not valid, show custom error messages
+                var elements = form.elements;
+                for (var i = 0; i < elements.length; i++) {
+                    if (!elements[i].validity.valid) {
+                        elements[i].classList.add('invalid');
+                        elements[i].setCustomValidity('Please fill out this field.');
+                    } else {
+                        elements[i].classList.remove('invalid');
+                        elements[i].setCustomValidity('');
+                    }
+                }
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
